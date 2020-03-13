@@ -1,0 +1,8 @@
+.numbrer-of-page{
+    margin: 0 10px;
+}
+
+.next-button,
+.previos-button{
+    border-radius: 5px;
+}

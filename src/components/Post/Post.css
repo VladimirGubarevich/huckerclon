@@ -1,0 +1,18 @@
+.post-container{
+    display: flex;
+    margin: 10px 20px;
+    border: 2px solid gray;
+}
+.post-score{
+    margin: -1em 10px;
+    flex-basis: 5%;
+}
+.post-author{
+    margin: -1em 0;
+    flex-basis: 80%;
+}
+
+.post-info{
+    margin: -1em 0;
+    flex-basis: 15%;
+}
