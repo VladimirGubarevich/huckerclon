@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen, cleanup } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 
 import FilterBar from '../components/FilterBar';
 
@@ -38,7 +38,7 @@ describe('FilterBar component', () => {
     });
 
     test('get value from input <Tile>', () => {
-        const inputTitle = screen.getByPlaceholderText('Title');
+        const inputTitle = renderResult.getByPlaceholderText('Title');
         fireEvent.change(inputTitle, {
             target: { value: 'testTitle' }
         });
@@ -46,7 +46,7 @@ describe('FilterBar component', () => {
     });
 
     test('get value from input <Author>', () => {
-        const inputAuthor = screen.getByPlaceholderText('Author');
+        const inputAuthor = renderResult.getByPlaceholderText('Author');
         fireEvent.change(inputAuthor, {
             target: { value: 'testAuthor' }
         });
@@ -54,17 +54,17 @@ describe('FilterBar component', () => {
     });
 
     test("send values from inputs by pressing 'Search' ", () => {
-        const inputTitle = screen.getByPlaceholderText('Title');
+        const inputTitle = renderResult.getByPlaceholderText('Title');
         fireEvent.change(inputTitle, {
             target: { value: 'testTitle' }
         });
 
-        const inputAuthor = screen.getByPlaceholderText('Author');
+        const inputAuthor = renderResult.getByPlaceholderText('Author');
         fireEvent.change(inputAuthor, {
             target: { value: 'testAuthor' }
         });
 
-        fireEvent.click(screen.getByText('Search'));
+        fireEvent.click(renderResult.getByText('Search'));
         expect(titleHandler).toHaveBeenCalledWith('testTitle');
         expect(authorHandler).toHaveBeenCalledWith('testAuthor');
         expect(search).toHaveBeenCalled();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen, cleanup } from '@testing-library/react'
+import { render, fireEvent, cleanup } from '@testing-library/react'
 
 import Pagination from '../components/Pagination/Pagination';
 
@@ -35,13 +35,13 @@ describe("Pagination component", () => {
         expect(getByText(expectedText)).toBeDefined();
     });
 
-    test("click on the button '>' ", () => {
-        fireEvent.click(screen.getByText('>'));
+    test("It should be called with number of current page + 1", () => {
+        fireEvent.click(renderResult.getByText('>'));
         expect(setCurrentPage).toHaveBeenCalledWith(4);
     });
 
-    test("click on the button '<' ", () => {
-        fireEvent.click(screen.getByText('<'));
+    test("It should be called with number of current page - 1", () => {
+        fireEvent.click(renderResult.getByText('<'));
         expect(setCurrentPage).toHaveBeenCalledWith(2);
     });
 });
