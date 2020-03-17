@@ -5,12 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const CustomDatePicker = (props) => {
     const [date, setDate] = useState(null);
 
-    // function changeDate(date) {
-        props.dateHandler(date);
-    // }
-    // useEffect(() => {
-        // setDate(date);
-    // }, [date]);
+    props.dateHandler(date);
 
     return (
         <DatePicker

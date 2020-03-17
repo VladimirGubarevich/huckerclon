@@ -23,7 +23,7 @@ const initialState = {
 
 export default function postsReducer(state = initialState, action) {
   switch (action.type) {
-    case 'FETCH_NEW_STORIES':
+    case 'FETCH_NEW_STORIES_SUCCESS':
       return {
         ...state,
         newStories: action.payload,
@@ -32,7 +32,7 @@ export default function postsReducer(state = initialState, action) {
           countOfPosts: action.payload.length
         }
       }
-    case 'FETCH_TOP_STORIES':
+    case 'FETCH_TOP_STORIES_SUCCESS':
       return {
         ...state,
         topStories: action.payload,
@@ -41,7 +41,7 @@ export default function postsReducer(state = initialState, action) {
           countOfPosts: action.payload.length
         }
       }
-    case 'FETCH_TOP_QUESTION':
+    case 'FETCH_TOP_QUESTION_SUCCESS':
       return {
         ...state,
         topQuestions: action.payload,
